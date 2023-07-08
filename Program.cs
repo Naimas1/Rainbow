@@ -1,10 +1,25 @@
-﻿namespace Rainbow
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rainbow
 {
-    internal class Program
+    class Programt
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            string text = "Hello, world!";
+            string word = "world";
+
+            Func<string, string, bool> checkWord = (text, word) =>
+            {
+                return text.Contains(word);
+            };
+
+            bool result = checkWord(text, word);
+            Console.WriteLine($"Текст містить слово '{word}': {result}");
         }
     }
 }
